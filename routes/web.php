@@ -49,7 +49,4 @@ Route::group(['middleware' => ['auth']], function() {
     // kategori
     Route::resource('/category', CategoryController::class);
 
-    // cart
-    // Route::get('/cart', [CartController::class, 'index']);
-    // Route::post('/pesan')
 });

@@ -38,12 +38,16 @@
                         {{-- <td>{{ $item->image }}</td> --}}
                         {{-- <td><img width="30px" height="30px" src="{{ asset('storage/' . $item->image) }}" ></td> --}}
                         <td>
-                            <a href="/product/{{ $item->id }}/edit">
-                                <button class="btn btn-warning mt-2" type="button"><i class="fa-solid fa-pen-to-square"></i></button>
-                            </a>
-                            <a href="/product/{{ $item->id }}/delete">
-                                <button class="btn btn-danger mt-2" type="button"><i class="fa-solid fa-trash-can"></i></button>
-                            </a>
+                            <form action="/product/{{ $item->id }}" method="POST">
+                                {{-- Update  --}}
+                                <a type="button" href="product/{{ $item->id }}/edit" class="btn btn-warning mt-2"><i class="fa-solid fa-pen-to-square"></i></a>
+                                @method("delete")
+                                @csrf
+                                {{-- Delete  --}}
+                                <button type="submit" class="btn btn-danger mt-2">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

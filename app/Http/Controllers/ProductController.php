@@ -121,10 +121,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Request $request, $id)
     {
         // Storage::delete($product->image);
-        Product::delete($product);
+        Product::destroy($id);
 
         return redirect('/product');
     }

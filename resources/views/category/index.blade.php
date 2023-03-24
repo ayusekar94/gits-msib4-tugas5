@@ -27,12 +27,16 @@
                     <tr>
                         <td>{{ $item->name }}</td>
                         <td>
-                            <a href="{{ route('category.edit',$item->id) }}">
-                                <button class="btn btn-warning mt-2" type="button"><i class="fa-solid fa-pen-to-square"></i></button>
-                            </a>
-                            <a href="{{ route('category.destroy',$item->id) }}">
-                                <button class="btn btn-danger mt-2" type="button"><i class="fa-solid fa-trash-can"></i></button>
-                            </a>
+                            <form action="/category/{{ $item->id }}" method="POST">
+                                {{-- Update  --}}
+                                <a type="button" href="category/{{ $item->id }}/edit" class="btn btn-warning mt-2"><i class="fa-solid fa-pen-to-square"></i></a>
+                                @method("delete")
+                                @csrf
+                                {{-- Delete  --}}
+                                <button type="submit" class="btn btn-danger mt-2">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
