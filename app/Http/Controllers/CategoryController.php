@@ -107,5 +107,6 @@ class CategoryController extends Controller
         Category::destroy($id);
 
         return redirect('/category');
+        
     }
 }

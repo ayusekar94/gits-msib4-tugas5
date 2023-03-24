@@ -48,5 +48,5 @@ Route::group(['middleware' => ['auth']], function() {
 
     // kategori
     Route::resource('/category', CategoryController::class);
-
+    
 });

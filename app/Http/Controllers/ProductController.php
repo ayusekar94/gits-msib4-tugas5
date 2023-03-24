@@ -127,5 +127,6 @@ class ProductController extends Controller
         Product::destroy($id);
 
         return redirect('/product');
+        
     }
 }

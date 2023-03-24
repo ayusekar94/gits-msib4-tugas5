@@ -47,6 +47,7 @@
                                 <button type="submit" class="btn btn-danger mt-2">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
+                                
                             </form>
                         </td>
                     </tr>
